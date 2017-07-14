@@ -18,6 +18,27 @@ day1:
    * express 引用模板时, 相同的样式 和 其他库 只引用一次即可
    
   * 项目讨论, 小功能实现
+  
+  ```js
+        // 代码中, 每个变迁在hover 时提供事件, 使用 ES6 新块级作用域的 let
+          for (let i = 0, j = $('.tag').length; i < j; i++) {
+            $('.tag').eq(i).hover(function() {
+            // 使用 stop 在每次新事件触发时, 结束上次动画, 达到取消动画此起彼伏的晃眼
+              $('.chuank').eq(i).stop().fadeIn(2000);
+            }, function() {
+            // 若离开, 立刻结束 2秒的 hover 动画
+              $('.chuank').eq(i).stop().fadeOut(300);
+            });
+            
+            // 在每次 hover 到标签时, 结束上次动画, 并添加显示
+            $('.chuank').eq(i).hover(function() {
+              $('.chuank').eq(i).stop().fadeIn();
+            }, function() {
+            // 离开同理
+              $('.chuank').eq(i).stop().fadeOut();
+            });
+          }
+  ```
    
 
 day2:
