@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>question</title>
+	<link rel="stylesheet" type="text/css" href="../public/question/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="../public/question/css/htmleaf-demo.css">
+	<!-- tag.css自己设计的样式 -->
+	<link rel="stylesheet" type="text/css" href="../public/question/css/tag.css">
+	<link href="../public/question/css/themes/quill.snow.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/monokai-sublime.min.css"/>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<% include header %>
+	<div class="htmleaf-container">
+		<div class="container">
+			<!-- 问题 -->
+			<form class="form-inline" >
+			<div class="form-group">
+				<!-- 标题Input标签 -->
+				<input type="text" class="form-control title" placeholder="标题:请一句话解释清楚您的问题">
+
+				<div class="biaoqian">
+					<!-- 添加标签的 -->
+					<div id="tags"></div>
+					<input type="text" class="form-control"id="biaoqian-input" placeholder="标签:请选择您的问题所属标签">
+				</div>
+        <!-- 隐藏标签 -->
+				<div class="tag  panel panel-default techTags-panel">
+					<!-- ul上半部分 -->
+					<ul class="nav nav-tabs" id="myTab"role="tablist">
+						<li role="presentation" class="active"><a href="#tag1" aria-controls="settings" role="tab" data-toggle="tab">开发语言</a></li>
+						<li role="presentation"><a href="#tag2" aria-controls="settings" role="tab" data-toggle="tab" >平台框架</a></li>
+						<li role="presentation"><a href="#tag3" aria-controls="settings" role="tab" data-toggle="tab">服务器</a></li>
+						<li role="presentation"><a href="#tag4" aria-controls="settings" role="tab" data-toggle="tab">数据库和缓存</a></li>
+						<li role="presentation"><a href="#tag5" aria-controls="settings" role="tab" data-toggle="tab">开发工具</a></li>
+						<li role="presentation"><a href="#tag6" aria-controls="settings" role="tab" data-toggle="tab">系统设备</a></li>
+						<li role="presentation"><a href="#tag7" aria-controls="settings" role="tab" data-toggle="tab">其他</a></li>
+					</ul>
+					<div class="tab-content">
+						<!-- 开发语言标签页  -->
+						<div role="tabpanel" class="tab-pane fade active in" id="tag1">
+							<ul class="taglist--inline">
+								<li class="mb5"><a class="tag-a" href="javascript:;">javascript</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">php</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">css</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">html</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">java</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">python</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">html5</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">node.js</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">c++</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">c</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">less</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">asp.net</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">shell</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">golang</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">c#</a></li>
+							</ul>
+						</div>
+            <!-- 平台框架标签页 -->
+						<div role="tabpanel" class="tab-pane fade" id="tag2">
+							<ul class="taglist--inline">
+								<li class="mb5"><a class="tag-a" href="javascript:;">laravel</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">flask</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">django</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">express</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">rudy-on-rails</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">yii</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">tornado</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">koa</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">struts</a></li>
+							</ul>
+						</div>
+            <!-- 服务器标签页 -->
+						<div role="tabpanel" class="tab-pane fade" id="tag3">
+							<ul class="taglist--inline">
+								<li class="mb5"><a class="tag-a" href="javascript:;">linux</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">nginx</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">apache</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">docker</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">ubuntu</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">centos</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">缓存</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">tomcat</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">负载均衡</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">unix</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">hadoop</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">windows-server</a></li>
+							</ul>
+
+						</div>
+            <!-- 数据库和缓存 -->
+						<div role="tabpanel" class="tab-pane fade" id="tag4">
+							<ul class="taglist--inline">
+								<li class="mb5"><a class="tag-a" href="javascript:;">musql</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">redis</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">mongndb</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">oracle</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">nosql</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">memcached</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">sqlserver</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">sqlite</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">postgresql</a></li>
+							</ul>
+						</div>
+            <!-- 开发工具标签页 -->
+						<div role="tabpanel" class="tab-pane fade" id="tag5">
+							<ul class="taglist--inline">
+								<li class="mb5"><a class="tag-a" href="javascript:;">git</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">github</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">vim</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">xcode</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">sublime-text</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">eclipse</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">intellij-idea</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">svn</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">visual-studio-code</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">maven</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">ide</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">atom</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">visual-studio</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">emacs</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">hg</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">textmate</a></li>
+							</ul>
+						</div>
+            <!-- 系统设备标签页 -->
+						<div role="tabpanel" class="tab-pane fade" id="tag6">
+							<ul class="taglist--inline">
+								<li class="mb5"><a class="tag-a" href="javascript:;">android</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">ios</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">chrome</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">windows</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">iphone</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">internet-explorer</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">firefox</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">safari</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">ipad</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">opera</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">apple-watch</a></li>
+							</ul>
+						</div>
+            <!-- 其他 -->
+						<div role="tabpanel" class="tab-pane fade" id="tag7">
+							<ul class="taglist--inline">
+								<li class="mb5"><a class="tag-a" href="javascript:;">html5</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">react.js</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">搜索引擎</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">virtualenv</a></li>
+								<li class="mb5"><a class="tag-a" href="javascript:;">lucene</a></li>
+							</ul>
+						</div>
+					</div>
+				<!-- <select class="form-control tag"  >
+				  <option></option>
+				  <option>javascript</option>
+				  <option>jquery</option>
+				  <option>node.js</option>
+				  <option>c</option>
+				</select> -->
+			</div>
+
+			<div class="row">
+				<!-- 文本编辑器 -->
+				<div class="col-md-12 mt50">
+					<div id="standalone-container">
+					<div id="toolbar-container">
+					<span class="ql-formats">
+					<select class="ql-font"></select>
+					<select class="ql-size"></select>
+					</span>
+					<span class="ql-formats">
+					<button class="ql-bold"></button>
+					<button class="ql-italic"></button>
+					<button class="ql-underline"></button>
+					<button class="ql-strike"></button>
+					</span>
+					<span class="ql-formats">
+					<select class="ql-color"></select>
+					<select class="ql-background"></select>
+					</span>
+					<span class="ql-formats">
+					<button class="ql-script" value="sub"></button>
+					<button class="ql-script" value="super"></button>
+					</span>
+					<span class="ql-formats">
+					<button class="ql-header" value="1"></button>
+					<button class="ql-header" value="2"></button>
+					<button class="ql-blockquote"></button>
+					<button class="ql-code-block"></button>
+					</span>
+					<span class="ql-formats">
+					<button class="ql-list" value="ordered"></button>
+					<button class="ql-list" value="bullet"></button>
+					<button class="ql-indent" value="-1"></button>
+					<button class="ql-indent" value="+1"></button>
+					</span>
+					<span class="ql-formats">
+					<button class="ql-direction" value="rtl"></button>
+					<select class="ql-align"></select>
+					</span>
+					<span class="ql-formats">
+					<button class="ql-link"></button>
+					<button class="ql-image"></button>
+					<button class="ql-video"></button>
+					<button class="ql-formula"></button>
+					</span>
+					<span class="ql-formats">
+					<button class="ql-clean"></button>
+					</span>
+					</div>
+					<!-- 发布内容框 -->
+					<div id="editor-container"></div>
+					<div class="checkbox">
+						<!-- <label class="label">
+							<input type="checkbox" id="blankCheckbox" value="option1" aria-label="...">是否发出悬赏
+						</label> -->
+					</div>
+					<div></div>
+					<!-- 发布按钮 -->
+					<button type="submit" class="btn btn-default">发布问题</button>
+
+					</div>
+				</div>
+			</div>
+		</form>
+		</div>
+	</div>
+  <% include ./foot %>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+	<script  src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+	<script src="../public/question/dist/quill.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			var quill = new Quill('#editor-container', {
+			    modules: {
+			      formula: true,
+			      syntax: true,
+			      toolbar: '#toolbar-container'
+			    },
+			    placeholder: 'Compose an epic...',
+			    theme: 'snow'
+			  });
+
+				// $('.tag-a').click(function () {
+				// 	var a = $(this).text() + ',' + $('.biaoqian').val();
+				// 	$('.biaoqian').val(a)
+				// })
+				// 点击弹出隐藏div
+
+					$('#myTab li:eq(0) a').tab('show');
+
+					$('#biaoqian-input').click(function(){
+						// $('.tag').slideToggle(400);
+						$('.tag').css({'display':'block'});
+					});
+					$('.tag').mouseleave(function() {
+						$('.tag').css({'display':'none'});
+					})
+
+				// 点击添加标签
+				  var b = 0;
+					var index = 0;
+					$('.tag-a').click(function(){
+						if (b < 5) {
+							b++;
+						var a = $(this).text();
+						console.log(a);
+						index = $(this).parent('.mb5').index();
+						$('#tags').append("<span class='tag-span center'>" + a + "<i class='remove'> × </i></span>");
+						// 添加数据
+						$('.tag-span').last().data('value', index);
+						$(this).parent('.mb5').fadeOut();
+					console.log('秒',$('.tag-span').last().data('value'));
+					}
+					});
+
+					// $('.remove').find(i).click(function() {
+					// 	$(this).parent().remove();
+					// });
+					//
+					// $('.mb5').click(function(){
+					// 	var a = $(this).text();
+					// 	console.log(a);
+					// 	$('#tags').append("<span class='tag-span center'>" + a + "<i class='remove'> × </i></span>");
+					// 	$(this).remove();
+					// })
+					//
+					// var a = $('.biaoqian');
+					// var b = $('.tag-a');
+					// for (var i = 0; i < 5; i++){
+					// 	var c = $(this).text();
+					// 	b.eq(i).on("click", {value:i},function(event){
+					// 		a.appendTo("<span class='tag-span center'>" + a + "<i class='remove'> × </i></span>");
+					// 	})
+					// }
+
+					$(document).on('click', '.remove', function() {
+						b--;
+						index = $(this).parent('.tag-span').data('value');
+						$(this).parent('.tag-span').remove();
+						console.log(index);
+						$('.mb5').eq(index).fadeIn();
+					});
+
+		});
+	</script>
+</body>
+</html>
