@@ -170,3 +170,36 @@ id　　　| id | object | 是 |        |
  * 完成问题解决
  * 完成数据库的读取
 
+## 2017-7-15
+
+### 编写回复页面,404页面,我的资产页面
+
+### 今日任务实现
+
+* 回复页面:从数据库中读取问题标题 "h2",问题内容"p",问题所属标签"span",提问者的用户名和头像"span""img"
+         
+	 回复区域用的是插件文本编辑器,自动添加到div中,回复者的用户名和头像
+* 404:插如404响应式图片
+* 我的资产页面:有我的收入,支出,体现,可用余额,最小体现金额不小于十.用table表格记录资产
+
+### 所遇到的问题
+
+* 点击索引标签根据标签内容不跳转页面刷新内容
+
+```
+<ul class="nav nav-tabs">
+              <li role="presentation" class="active"><a href="#money-a1" aria-controls="settings" role="tab" data-     toggle="tab">收入</a></li>
+  	      <li role="presentation"><a href="#money-a2" aria-controls="settings" role="tab" data-toggle="tab" >支出</a></li>
+  	      <li role="presentation"><a href="#money-a3" aria-controls="settings" role="tab" data-toggle="tab">体现</a></li>
+            </ul>
+	    
+	    
+<div role="tabpanel" class="tab-pane fade active in" id="money-a1">
+<div role="tabpanel" class="tab-pane fade" id="money-a2">
+<div role="tabpanel" class="tab-pane fade" id="money-a3">
+
+```
+
+### 明日计划内容
+
+* 哪缺写哪
