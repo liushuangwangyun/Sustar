@@ -203,3 +203,36 @@ id　　　| id | object | 是 |        |
 ### 明日计划内容
 
 * 哪缺写哪
+
+## 2017-7-17
+
+### 测试有问题的地方进行修改
+
+### 今日任务完成
+
+1.  对回复页进行修改.
+    1. 修改之前:无论点击哪里都是跳转的同一个页面
+    2. 修改之后:可以根据标题的内容跳转到相应的页面,呈现不同的效果
+2.  修改了部分页面的css样式
+
+### 所遇到的问题
+
+回复页面回复时的内容模块出现问题,人物头像无法获取
+
+```
+router.get('/', function(req, res) {
+  console.log(req.query);
+  var state;
+  if (req.session.uid != undefined) {
+      state = true;
+  } else {
+      state = false;
+  };
+  qdb.qdb.find({"title": req.query.title}, function(err, data){
+    console.log(data);
+    res.render('answer', {state: state, data: data[0]});
+  })
+});
+
+```
+
